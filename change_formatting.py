@@ -7,4 +7,4 @@ directory = os.listdir(dir)
 for file in directory:
     
     if str(file).split(".")[-1] == "dpx":
-        os.popen(f'ffmpeg -i {dir}{file} {dir}{str(file).split(".")[0]}.avi')
+        os.popen(f'ffmpeg -i {dir}{file} {dir}{str(file).split(".")[0]}.png')
