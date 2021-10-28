@@ -1,6 +1,6 @@
 import os
-dir1 = "G:\修复2png"
-dir2 = "G:\修复2"
+dir1 = "G:\修复1png"
+dir2 = "G:\修复1"
 
 def compare(dir):
     list_fold = []
@@ -8,10 +8,8 @@ def compare(dir):
     files.sort()
 
     for file in files:
-        if dir == "G:\修复2png":
-            number = str(file).split(".")[0]
-        else:
-            number = str(file).split(".")[1]
+        number = str(file).split(".")[0]
+
         list_fold.append(number)
     list_fold.sort()
     return list_fold
