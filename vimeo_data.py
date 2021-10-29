@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skimage.metrics import peak_signal_noise_ratio
 
-input_dir_origin = "G:\原始2png"
-output_dir_orngin = "D:\原始2分场景"
-input_dir_fixed = "G:\修复2png"
-output_dir_fixed = "D:\修复2分场景"
+input_dir_origin = "G:\原始1png"
+output_dir_orngin = "D:\原始1分场景"
+input_dir_fixed = "E:\修复1png"
+output_dir_fixed = "D:\修复1分场景"
 all_file = os.listdir(input_dir_origin)
 all_file.sort()
 
@@ -22,7 +22,7 @@ def split_fold(baseline, count, png_list):
         if count >= len(all_file):#文件尾问题解决
             if len(png_list) == 1:
                 print("已到达文件结尾，分类结束")
-                msg = MIMEText('原始2和修复2搞定了\n\n这是系统自动发出邮件，请不要回复。', 'plain', 'utf-8')
+                msg = MIMEText('原始1和修复1搞定了!\n\n这是系统自动发出邮件，请不要回复。', 'plain', 'utf-8')
                 msg['From'] = '940341746@qq.com'
                 msg['To'] = '940341746@qq.com'
                 msg['Subject'] = '原始2和修复2搞定了'
