@@ -17,7 +17,7 @@ all_file.sort()
 def split_fold(baseline, count, png_list):
     png_list.append(all_file[baseline])
     while 1:        
-        if count == len(all_file):#文件尾问题解决
+        if count >= len(all_file):#文件尾问题解决
             if len(png_list) == 0:
                 print("已到达文件结尾，分类结束")
                 msg = MIMEText('测试结束了\n\n这是系统自动发出邮件，请不要回复。', 'plain', 'utf-8')
@@ -59,6 +59,7 @@ def split_fold(baseline, count, png_list):
                 baseline = count
                 count += 1
                 print("判断为两个分镜的图片，去创建文件夹")
+                return count, baseline, png_list
                 
             
 #返回pnglist两个目的：1.复制文件；2.列表首尾就是文件夹名字
