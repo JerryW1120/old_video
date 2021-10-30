@@ -9,9 +9,9 @@ import numpy as np
 from skimage.metrics import peak_signal_noise_ratio
 
 input_dir_origin = "G:\原始1png"
-output_dir_orngin = "D:\原始1分场景"
+output_dir_orngin = "E:\原始1分场景1"
 input_dir_fixed = "E:\修复1png"
-output_dir_fixed = "D:\修复1分场景"
+output_dir_fixed = "E:\修复1分场景1"
 all_file = os.listdir(input_dir_origin)
 all_file.sort()
 
@@ -74,8 +74,9 @@ def copyfile(sourcefile, destanationfile):
         shutil.copy(sourcefile, destanationfile)          # 复制文件
         print ("copy %s -> %s" % (sourcefile, destanationfile))
 
-count = 1
-baseline = 0
+
+baseline = 39183
+count = baseline + 1
 
 while count <= len(all_file):
     png_list = []
