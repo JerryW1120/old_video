@@ -5,6 +5,6 @@ folders = os.listdir(dir)
 
 for folder in folders:
     files = os.listdir(dir + "\\" + folder)
-    if len(files) <= 40:
-        if len(files) != 1:
+    if len(files) <= 50:
+        if len(files) > 40:
             print(folder)
