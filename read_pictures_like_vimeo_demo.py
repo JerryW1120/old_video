@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-dir_origin = "D:\原始2分场景\xxxx"
-dir_fixed = "D:\修复2分场景\xxxx"
+dir_origin = "D:\原始2分场景\\000109449 - 000109497"
+dir_fixed = "D:\修复2分场景\\000109449 - 000109497"
 files = os.listdir(dir_origin)
 files.sort()
 
@@ -79,9 +79,17 @@ def input_pictures_with_two_lists():
 
 #如果要每7个7个输入网络的话，去掉大循环即可
 
-print("成对儿返回得到的列表就是：",input_pictures_with_pairs())
+#print("成对儿返回得到的列表就是：",input_pictures_with_pairs())
+a = input_pictures_with_pairs()
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        print(a[i][j])
+    
+    print('\n')
 
-two_lists = input_pictures_with_two_lists()
-print("\n直接返回两个列表是：", two_lists[0], two_lists[1])
+
+#two_lists = input_pictures_with_two_lists()
+#print("\n直接返回两个列表是：", two_lists[0])
+#print("\n", two_lists[1])
            
         
