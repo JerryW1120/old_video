@@ -3,17 +3,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-dir_origin = "D:\原始2分场景"
-dir_fixed = "D:\修复2分场景"
-folders = os.listdir(dir_origin)
-folders.sort()
+dir_origin = "D:\原始2分场景\xxxx"
+dir_fixed = "D:\修复2分场景\xxxx"
+files = os.listdir(dir_origin)
+files.sort()
 
 '''
 读取各个场景下的文件夹
 '''
-for folder in folders:
-        files = os.listdir(dir_origin + '\\' + folder)
-        files.sort()
+# for folder in folders:
+#         files = os.listdir(dir_origin + '\\' + folder)
+#         files.sort()
 
 '''
 返回值是三级列表
@@ -30,13 +30,13 @@ def input_pictures_with_pairs():
 
             while count_inside - count < 7:
                 pair_list = []
-                pic_og = plt.imread(os.path.join(dir_origin, folder, files[count_inside]))
-                pic_fixed = plt.imread(os.path.join(dir_fixed, folder, files[count_inside]))
-                pic_og = np.array(pic_og)
-                pic_fixed = np.array(pic_fixed)
+                # pic_og = plt.imread(os.path.join(dir_origin, folder, files[count]))
+                # pic_fixed = plt.imread(os.path.join(dir_fixed, folder, files[count]))
+                # pic_og = np.array(pic_og)
+                # pic_fixed = np.array(pic_fixed)
                 
-                pair_list.append(pic_og)
-                pair_list.append(pic_fixed)
+                pair_list.append(files[count_inside])
+                pair_list.append(files[count_inside])
                 middle_list.append(pair_list)
                 count_inside += 1
 
@@ -61,13 +61,13 @@ def input_pictures_with_two_lists():
             count_inside = count
 
             while count_inside - count < 7:
-                pic_og = plt.imread(os.path.join(dir_origin, folder, files[count_inside]))
-                pic_fixed = plt.imread(os.path.join(dir_fixed, folder, files[count_inside]))
-                pic_og = np.array(pic_og)
-                pic_fixed = np.array(pic_fixed)
+                # pic_og = plt.imread(os.path.join(dir_origin, folder, files[count]))
+                # pic_fixed = plt.imread(os.path.join(dir_fixed, folder, files[count]))
+                # pic_og = np.array(pic_og)
+                # pic_fixed = np.array(pic_fixed)
             
-                og_list.append(pic_og)
-                fixed_list.append(pic_fixed)
+                og_list.append(files[count_inside])
+                fixed_list.append(files[count_inside])
                 count_inside += 1
 
             whole_og_list.append(og_list)
@@ -79,6 +79,9 @@ def input_pictures_with_two_lists():
 
 #如果要每7个7个输入网络的话，去掉大循环即可
 
+print("成对儿返回得到的列表就是：",input_pictures_with_pairs())
 
+two_lists = input_pictures_with_two_lists()
+print("\n直接返回两个列表是：", two_lists[0], two_lists[1])
            
         
