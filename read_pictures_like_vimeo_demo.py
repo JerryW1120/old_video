@@ -52,34 +52,39 @@ def input_pictures_with_pairs(dir_origin, dir_fixed):
 '''
 def input_pictures_with_two_lists(dir_origin, dir_fixed):
 
-    files = os.listdir(dir_origin)
-    files.sort()
+    folders = os.listdir(dir_origin)
+    folders.sort()
 
-    count = 0
+    '''
+    读取各个场景下的文件夹
+    '''
     whole_og_list = []
-    whole_fixed_list = []
+    for folder in folders:
+        files = os.listdir(dir_origin + '\\' + folder)
+        files.sort()
 
-    while count <= len(files) - 7:
-        og_list = []
-        fixed_list = []
-        count_inside = count
-
-        while count_inside - count < 7:
-            # pic_og = plt.imread(os.path.join(dir_origin, folder, files[count]))
-            # pic_fixed = plt.imread(os.path.join(dir_fixed, folder, files[count]))
-            # pic_og = np.array(pic_og)
-            # pic_fixed = np.array(pic_fixed)
+        count = 0
+        middle_og_list = []
         
-            og_list.append(files[count_inside])
-            fixed_list.append(files[count_inside])
-            count_inside += 1
+        while count <= len(files) - 7:
+            og_list = []
+            fixed_list = []
+            count_inside = count
 
-        whole_og_list.append(og_list)
-        whole_fixed_list.append(fixed_list)
+            while count_inside - count < 7:
 
-        count += 1
+                og_list.append(files[count_inside])
+                fixed_list.append(files[count_inside])
+                count_inside += 1
+
+            middle_og_list.append(og_list)
+           
+            count += 1
+            
+        whole_og_list.append(middle_og_list)
+        
     
-    return whole_og_list, whole_fixed_list
+    return whole_og_list
 
 #如果要每7个7个输入网络的话，去掉大循环即可
 
