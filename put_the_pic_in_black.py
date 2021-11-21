@@ -25,7 +25,7 @@ def img_resize_to_target_black(image):
 
     return bgr_img
 
-if __name__ == '__main__':
+def main_fuc():
     files =  os.listdir('H:\demo')
     files.sort()
     for file in files:
