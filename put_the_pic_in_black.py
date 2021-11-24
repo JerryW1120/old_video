@@ -25,16 +25,16 @@ def img_resize_to_target_black(image):
 
     return bgr_img
 
-def main_fuc():
-    files =  os.listdir('H:\demo')
+def main_fuc(input_dir, output_dir):
+    files =  os.listdir('input_dir')
     files.sort()
     for file in files:
 
-        image = cv2.imread('H:\demo\\' + file)
+        image = cv2.imread('input_dir' + '\\' + file)
 
         img_new_black = img_resize_to_target_black(image)
 
         #cv2.imshow("img_new_black", img_new_black)
 
         #cv2.waitKey()
-        cv2.imwrite('H:\demo_padding\\' + file, img_new_black)
+        cv2.imwrite('output_dir' + '\\' + file, img_new_black)
