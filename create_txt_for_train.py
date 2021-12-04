@@ -10,7 +10,7 @@ for i in range(len(a)):
     print('\n')'''
 
 
-two_lists = ld.input_pictures_with_two_lists('D:\修复2分场景', 'D:\修复2分场景')
+two_lists = ld.input_pictures_with_two_lists('D:修复2分场景', 'D:\修复2分场景')
 
 print("\n", two_lists)
 
@@ -19,13 +19,13 @@ print("\n", two_lists)
 f = open("index.txt", "w")
 
 
-path_fixed = '修复2分场景/'
+path_fixed = 'fixed2/'
 
 folders = os.listdir('D:\修复2分场景')
 count = 0
 
 for second_lists in two_lists:
-    path_og = '修复2分场景/'
+    path_og = 'fixed2/'
     path_og = os.path.join(path_og, folders[count]) + '/'
     for lists in second_lists:       
         for item in lists:
